@@ -1,0 +1,29 @@
+1. Open a new terminal in Sagemaker notebook and run the following code:
+
+  pip install kaggle
+
+2. Create an account on kaggle.com. Click on My Account. Scroll down to the API section and click 'Create New API token'. The token json file will be stored in your Downloads folder.
+
+3. Upload the json file into the root directory of Sagemaker notebook.
+
+4.  Move API key to where Kaggle expects it by typing below command in terminal:
+
+  mv /home/ec2-user/SageMaker/kaggle.json /home/ec2-user/.kaggle
+
+5. Navigate to desired folder on terminal, in this case it is:
+
+    cd SageMaker/JDDay2
+
+6. Execute the following command:
+
+     kaggle competitions download -c bike-sharing-demand
+
+7. If you get this error: 'Your kaggle API key is readable by other users on     this system.' type in this command:
+
+    chmod 600 ~/.kaggle/kaggle.json
+
+8. If you still get an error: '403 : Forbidden', make sure to accept the rules of the competition in kaggle. (https://www.kaggle.com/c/bike-sharing-demand/data)
+
+9. Also, in order to unzip the bike-sharing-demand.zip data file in Sagemaker terminal use the following command:
+
+unzip bike-sharing-demand.zip
